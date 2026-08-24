@@ -3,11 +3,13 @@
 Public packages that expose official CJK character and word lists as
 plain, importable data. One folder per programming language:
 
-| Folder   | Registry | Install |
-| -------- | -------- | ------- |
-| `js/`    | npm / bun | `npm install cjk-lists` / `bun add cjk-lists` |
-| `python/` | PyPI    | `pip install cjk-lists` |
-| `rust/`  | crates.io | `cjk-lists` in `Cargo.toml` |
+| Folder    | Registry | Install |
+| --------- | -------- | ------- |
+| `js/`     | npm / bun | `npm install cjk-lists` / `bun add cjk-lists` |
+| `python/` | PyPI     | `pip install cjk-lists` |
+| `rust/`   | crates.io | `cjk-lists` in `Cargo.toml` |
+| `java/`   | Maven    | `io.github.tepmex:cjk-lists` |
+| `kotlin/` | Maven    | `io.github.tepmex:cjk-lists-kotlin` |
 
 Canonical JSON lives in [`data/`](data/). Language bindings are generated
 from those files by [`scripts/generate.py`](scripts/generate.py).
@@ -29,8 +31,8 @@ union of 1–4. Use `all` when you want every item in order.
 
 HSK 3.0 does **not** officially split levels 7–9. `level7` / `level8` /
 `level9` are equal sequential thirds of that official band. Prefer
-`level7To9` (JS), `level7_9` (Python), or `LEVEL_7_9` (Rust) when you need
-the combined syllabus list.
+`level7To9` (JS / Kotlin), `level7_9` (Python), or `LEVEL_7_9`
+(Rust / Java) when you need the combined syllabus list.
 
 Provenance, licenses, and exact counts: [`data/SOURCES.md`](data/SOURCES.md).
 
@@ -81,9 +83,38 @@ assert_eq!(TOP_1000[0], "的");
 
 The crate is `no_std` and has no dependencies.
 
+### Java (Maven)
+
+```java
+io.github.tepmex.cjklists.zh.hsk2.Hanzi.LEVEL_1;
+io.github.tepmex.cjklists.zh.hsk2.Words.level(3);
+io.github.tepmex.cjklists.zh.hsk3.Hanzi.LEVEL_7_9;
+io.github.tepmex.cjklists.zh.subtlexch.Words.TOP_1000;
+io.github.tepmex.cjklists.zh.subtlexch.Hanzi.TOP_1000;
+```
+
+Java 11+. Lists are unmodifiable.
+
+### Kotlin (Maven)
+
+```kotlin
+import io.github.tepmex.cjklists.kt.zh.hsk2.Hanzi
+import io.github.tepmex.cjklists.kt.zh.hsk3.Hanzi as Hsk3Hanzi
+import io.github.tepmex.cjklists.kt.zh.subtlexch.top1000
+import io.github.tepmex.cjklists.kt.zh.subtlexch.Hanzi as SubtlexHanzi
+
+Hanzi.level1
+io.github.tepmex.cjklists.kt.zh.hsk2.Words.level(3)
+Hsk3Hanzi.level7To9
+top1000
+SubtlexHanzi.top1000
+```
+
+JDK 11+.
+
 ## Install from this repo
 
-Until the packages are published to npm / PyPI / crates.io:
+Until the packages are published to npm / PyPI / crates.io / Maven Central:
 
 ```bash
 # JavaScript (npm or bun)
@@ -97,12 +128,20 @@ pip install ./python
 # cjk-lists = { path = "../cjk-lists/rust" }
 # or, once pushed:
 # cjk-lists = { git = "https://github.com/TepMex/cjk-lists" }
+
+# Java
+mvn -f java/pom.xml install
+
+# Kotlin
+mvn -f kotlin/pom.xml install
 ```
 
 ## Regenerating lists
 
 ```bash
 python3 scripts/generate.py
+# Rebuild only Java / Kotlin from data/*.json:
+python3 scripts/generate.py --from-data
 ```
 
 ## License

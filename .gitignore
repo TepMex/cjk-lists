@@ -3,6 +3,8 @@ node_modules/
 target/
 dist/
 build/
+.gradle/
+.kotlin/
 __pycache__/
 *.py[cod]
 *.egg-info/

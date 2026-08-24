@@ -33,3 +33,27 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - name: Test Rust crate
         run: cargo test --manifest-path rust/Cargo.toml
+
+  java:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+      - name: Test Java package
+        run: mvn -f java/pom.xml -B test
+
+  kotlin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+      - name: Test Kotlin package
+        run: mvn -f kotlin/pom.xml -B test

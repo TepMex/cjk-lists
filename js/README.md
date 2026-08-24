@@ -14,4 +14,4 @@ console.log(top1000[0]); // 的
 ```
 
 See the [repository README](https://github.com/TepMex/cjk-lists) for the
-full API, sources, and Python / Rust packages.
+full API, sources, and Python / Rust / Java / Kotlin packages.

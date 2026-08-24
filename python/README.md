@@ -12,4 +12,4 @@ print(zh.subtlex_ch.top_1000[0])  # 的
 ```
 
 See the [repository README](https://github.com/TepMex/cjk-lists) for the
-full API, sources, and JavaScript / Rust packages.
+full API, sources, and JavaScript / Rust / Java / Kotlin packages.
