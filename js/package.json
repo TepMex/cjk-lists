@@ -1,0 +1,91 @@
+{
+  "name": "cjk-lists",
+  "version": "0.1.0",
+  "description": "Official CJK character and word lists (HSK, SUBTLEX-CH, and more to come)",
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    },
+    "./zh": {
+      "types": "./src/zh/index.d.ts",
+      "import": "./src/zh/index.js",
+      "default": "./src/zh/index.js"
+    },
+    "./zh/hsk2": {
+      "types": "./src/zh/hsk2/index.d.ts",
+      "import": "./src/zh/hsk2/index.js",
+      "default": "./src/zh/hsk2/index.js"
+    },
+    "./zh/hsk2/hanzi": {
+      "types": "./src/zh/hsk2/hanzi.d.ts",
+      "import": "./src/zh/hsk2/hanzi.js",
+      "default": "./src/zh/hsk2/hanzi.js"
+    },
+    "./zh/hsk2/words": {
+      "types": "./src/zh/hsk2/words.d.ts",
+      "import": "./src/zh/hsk2/words.js",
+      "default": "./src/zh/hsk2/words.js"
+    },
+    "./zh/hsk3": {
+      "types": "./src/zh/hsk3/index.d.ts",
+      "import": "./src/zh/hsk3/index.js",
+      "default": "./src/zh/hsk3/index.js"
+    },
+    "./zh/hsk3/hanzi": {
+      "types": "./src/zh/hsk3/hanzi.d.ts",
+      "import": "./src/zh/hsk3/hanzi.js",
+      "default": "./src/zh/hsk3/hanzi.js"
+    },
+    "./zh/hsk3/words": {
+      "types": "./src/zh/hsk3/words.d.ts",
+      "import": "./src/zh/hsk3/words.js",
+      "default": "./src/zh/hsk3/words.js"
+    },
+    "./zh/subtlex-ch": {
+      "types": "./src/zh/subtlex-ch/index.d.ts",
+      "import": "./src/zh/subtlex-ch/index.js",
+      "default": "./src/zh/subtlex-ch/index.js"
+    },
+    "./zh/subtlex-ch/hanzi": {
+      "types": "./src/zh/subtlex-ch/hanzi.d.ts",
+      "import": "./src/zh/subtlex-ch/hanzi.js",
+      "default": "./src/zh/subtlex-ch/hanzi.js"
+    },
+    "./zh/subtlex-ch/words": {
+      "types": "./src/zh/subtlex-ch/words.d.ts",
+      "import": "./src/zh/subtlex-ch/words.js",
+      "default": "./src/zh/subtlex-ch/words.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "chinese",
+    "hanzi",
+    "hsk",
+    "cjk",
+    "mandarin",
+    "subtlex"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TepMex/cjk-lists.git",
+    "directory": "js"
+  },
+  "scripts": {
+    "test": "node --test test/lists.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
