@@ -1,0 +1,12 @@
+[package]
+name = "cjk-lists"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70"
+license = "MIT"
+description = "Official CJK character and word lists (HSK, SUBTLEX-CH, and more to come)"
+repository = "https://github.com/TepMex/cjk-lists"
+readme = "README.md"
+keywords = ["chinese", "hanzi", "hsk", "cjk", "mandarin"]
+categories = ["internationalization", "text-processing", "no-std"]
+include = ["src/**/*", "Cargo.toml", "README.md", "LICENSE"]
