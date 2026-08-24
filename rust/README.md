@@ -15,4 +15,4 @@ println!("{}", LEVEL_1.len());
 
 `no_std`, no dependencies. See the
 [repository README](https://github.com/TepMex/cjk-lists) for the full API,
-sources, and JavaScript / Python packages.
+sources, and JavaScript / Python / Java / Kotlin packages.
